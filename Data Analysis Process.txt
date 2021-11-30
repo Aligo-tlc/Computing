@@ -1,0 +1,22 @@
+READ DATASET
+import numpy as np
+import pandas as pd
+df = pd.read_csv("C:/Users/ALIGO-TLC/Desktop/Data Analysis/DirectMarketing.csv")
+print(df.shape)
+df.head()
+
+
+CHECKING MISSING VALUES
+
+df.isna().sum()
+
+REPLACE MISSING VALUES WITH NOTHINGS
+df.History.fillna("Nothing", inplace=True)
+df.isna().sum().sum()
+
+
+AMOUNT SPENT AND 
+print(f'The average money spent is {df.AmountSpent.mean()}. The median is {df.AmountSpent.median()}')
+
+PRINT AMOUNT OM HISTOGRAM
+df['AmountSpent'].plot(kind='hist', figsize=(10,6))
